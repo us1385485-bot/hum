@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ideal Sports — Explore clubs, search players, and view detailed player statistics." />
+  <title>Teams & Players — Ideal Sports</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Ideal Sports Home">
+        <span class="logo-icon">⚽</span>
+        Ideal<span>Sports</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="fixtures.html" class="nav-link">Fixtures</a>
+        <a href="teams.html" class="nav-link">Teams</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <nav class="mobile-drawer" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="fixtures.html" class="nav-link">📅 Fixtures</a>
+    <a href="teams.html" class="nav-link">👥 Teams</a>
+    <a href="about.html" class="nav-link">ℹ️ About</a>
+    <a href="contact.html" class="nav-link">✉️ Contact</a>
+  </nav>
+
+  <!-- ======================= PAGE HERO ======================= -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h1 class="section-title">Teams & <span class="accent">Players</span></h1>
+          <p class="section-subtitle">Browse partner clubs, search for players, and filter by position. Click any player for full stats.</p>
+        </div>
+      </div>
+
+      <!-- Search & Filter Toolbar -->
+      <div class="team-toolbar reveal reveal-delay-1">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="player-search" placeholder="Search players by name..." aria-label="Search players" />
+        </div>
+        <div class="position-filter" role="group" aria-label="Filter by position">
+          <button class="position-btn active" data-position="all">All</button>
+          <button class="position-btn" data-position="GK">GK</button>
+          <button class="position-btn" data-position="DF">DF</button>
+          <button class="position-btn" data-position="MF">MF</button>
+          <button class="position-btn" data-position="FW">FW</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CLUB GRID ======================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2 class="section-title">Partner <span class="accent">Clubs</span></h2>
+          <p class="section-subtitle">96 clubs across 12 leagues trust Ideal Sports.</p>
+        </div>
+      </div>
+
+      <div class="club-grid">
+        <div class="club-card glass-card reveal">
+          <div class="club-crest">MC</div>
+          <div class="club-name">Manchester City</div>
+          <div class="club-league">Premier League</div>
+        </div>
+        <div class="club-card glass-card reveal reveal-delay-1">
+          <div class="club-crest">LIV</div>
+          <div class="club-name">Liverpool</div>
+          <div class="club-league">Premier League</div>
+        </div>
+        <div class="club-card glass-card reveal reveal-delay-2">
+          <div class="club-crest">ARS</div>
+          <div class="club-name">Arsenal</div>
+          <div class="club-league">Premier League</div>
+        </div>
+        <div class="club-card glass-card reveal reveal-delay-3">
+          <div class="club-crest">RM</div>
+          <div class="club-name">Real Madrid</div>
+          <div class="club-league">La Liga</div>
+        </div>
+        <div class="club-card glass-card reveal">
+          <div class="club-crest">BAR</div>
+          <div class="club-name">Barcelona</div>
+          <div class="club-league">La Liga</div>
+        </div>
+        <div class="club-card glass-card reveal reveal-delay-1">
+          <div class="club-crest">BAY</div>
+          <div class="club-name">Bayern Munich</div>
+          <div class="club-league">Bundesliga</div>
+        </div>
+        <div class="club-card glass-card reveal reveal-delay-2">
+          <div class="club-crest">JUV</div>
+          <div class="club-name">Juventus</div>
+          <div class="club-league">Serie A</div>
+        </div>
+        <div class="club-card glass-card reveal reveal-delay-3">
+          <div class="club-crest">PSG</div>
+          <div class="club-name">PSG</div>
+          <div class="club-league">Ligue 1</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PLAYER GRID ======================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2 class="section-title">Top <span class="accent">Players</span></h2>
+          <p class="section-subtitle">Click any player card to view their full profile and season stats.</p>
+        </div>
+        <span id="player-count" class="live-badge" style="background: rgba(0,255,135,0.1); border-color: var(--border-strong); color: var(--accent-green);">12 Players</span>
+      </div>
+
+      <div class="player-grid" id="player-grid">
+        <!-- Players will be rendered dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PLAYER MODAL ======================= -->
+  <div class="modal-overlay" id="player-modal" role="dialog" aria-modal="true" aria-labelledby="modal-player-name">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-header">
+        <div class="modal-avatar" id="modal-avatar">P</div>
+        <div>
+          <h3 id="modal-player-name" style="font-size: var(--fs-h3); font-weight: 800;">Player Name</h3>
+          <p id="modal-player-meta" style="color: var(--text-muted); font-size: var(--fs-small);">Club · Position</p>
+        </div>
+      </div>
+      <p id="modal-bio" style="color: var(--text-muted); font-size: var(--fs-small);">Player biography goes here.</p>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <div class="value" id="modal-goals">0</div>
+          <div class="label">Goals</div>
+        </div>
+        <div class="modal-stat">
+          <div class="value" id="modal-assists">0</div>
+          <div class="label">Assists</div>
+        </div>
+        <div class="modal-stat">
+          <div class="value" id="modal-apps">0</div>
+          <div class="label">Appearances</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">⚽</span>
+            Ideal<span>Sports</span>
+          </a>
+          <p>Your ultimate destination for live football scores, fixtures, and player insights across the globe.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+            <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="fixtures.html">Fixtures & Scores</a>
+            <a href="teams.html">Teams & Players</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Leagues</h4>
+          <div class="footer-links">
+            <a href="#">Premier League</a>
+            <a href="#">La Liga</a>
+            <a href="#">Serie A</a>
+            <a href="#">Bundesliga</a>
+            <a href="#">Champions League</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div class="footer-links">
+            <a href="mailto:info@idealsports.com">✉️ info@idealsports.com</a>
+            <a href="tel:+15551234567">📞 +1 (555) 123-4567</a>
+            <a href="#">📍 88 Stadium Avenue, London</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Ideal Sports. All rights reserved.</span>
+        <span>Made with ⚽ for the love of the game.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ==========================================================================
+       TEAMS PAGE — Player Data, Search, Filter & Modal
+       ========================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      /* --- Player Data --- */
+      const players = [
+        { name: 'Erling Haaland', club: 'Manchester City', position: 'FW', initials: 'EH', goals: 27, assists: 5, apps: 31, bio: 'A prolific Norwegian striker known for his explosive pace, physical dominance, and clinical finishing in the box.' },
+        { name: 'Mohamed Salah', club: 'Liverpool', position: 'FW', initials: 'MS', goals: 22, assists: 12, apps: 32, bio: 'An Egyptian winger with elite dribbling, vision, and a lethal left foot. A consistent Ballon d\'Or contender.' },
+        { name: 'Bukayo Saka', club: 'Arsenal', position: 'FW', initials: 'BS', goals: 14, assists: 11, apps: 30, bio: 'A versatile English winger who combines technical flair with relentless work rate on both ends of the pitch.' },
+        { name: 'Jude Bellingham', club: 'Real Madrid', position: 'MF', initials: 'JB', goals: 18, assists: 8, apps: 29, bio: 'A dynamic English midfielder with box-to-box energy, elite ball-carrying, and a knack for scoring in big moments.' },
+        { name: 'Lamine Yamal', club: 'Barcelona', position: 'FW', initials: 'LY', goals: 9, assists: 14, apps: 28, bio: 'A teenage prodigy with dazzling close control, creativity, and composure far beyond his years.' },
+        { name: 'Harry Kane', club: 'Bayern Munich', position: 'FW', initials: 'HK', goals: 31, assists: 9, apps: 30, bio: 'An elite English striker with world-class finishing, link-up play, and remarkable consistency across leagues.' },
+        { name: 'Rodri', club: 'Manchester City', position: 'MF', initials: 'RO', goals: 7, assists: 6, apps: 30, bio: 'The metronomic Spanish pivot who dictates tempo, breaks up play, and anchors City\'s midfield engine.' },
+        { name: 'Virgil van Dijk', club: 'Liverpool', position: 'DF', initials: 'VV', goals: 3, assists: 2, apps: 29, bio: 'A commanding Dutch centre-back with elite aerial presence, reading of the game, and composure in possession.' },
+        { name: 'William Saliba', club: 'Arsenal', position: 'DF', initials: 'WS', goals: 2, assists: 1, apps: 30, bio: 'A composed French defender with exceptional recovery speed, positioning, and progressive passing.' },
+        { name: 'Alisson Becker', club: 'Liverpool', position: 'GK', initials: 'AB', goals: 0, assists: 1, apps: 28, bio: 'A Brazilian shot-stopper renowned for his reflexes, distribution, and ability to produce match-winning saves.' },
+        { name: 'Kylian Mbappé', club: 'Real Madrid', position: 'FW', initials: 'KM', goals: 25, assists: 10, apps: 30, bio: 'A French superstar with blistering acceleration, elite finishing, and the ability to change games in an instant.' },
+        { name: 'Federico Valverde', club: 'Real Madrid', position: 'MF', initials: 'FV', goals: 6, assists: 7, apps: 31, bio: 'An Uruguayan workhorse with relentless stamina, powerful shooting, and versatility across midfield roles.' }
+      ];
+
+      /* --- State --- */
+      let currentSearch = '';
+      let currentPosition = 'all';
+
+      const grid = document.getElementById('player-grid');
+      const countEl = document.getElementById('player-count');
+      const searchInput = document.getElementById('player-search');
+      const positionBtns = document.querySelectorAll('.position-btn');
+
+      /* --- Render Players --- */
+      const renderPlayers = () => {
+        const filtered = players.filter((p) => {
+          const matchesSearch = p.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                                p.club.toLowerCase().includes(currentSearch.toLowerCase());
+          const matchesPosition = currentPosition === 'all' || p.position === currentPosition;
+          return matchesSearch && matchesPosition;
+        });
+
+        countEl.textContent = `${filtered.length} Player${filtered.length !== 1 ? 's' : ''}`;
+
+        if (!filtered.length) {
+          grid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: var(--space-xl) 0;">
+              <p style="font-size: 3rem; margin-bottom: var(--space-sm);">🔍</p>
+              <h3 style="margin-bottom: var(--space-xs);">No players found</h3>
+              <p style="color: var(--text-muted);">Try a different search or position filter.</p>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = filtered.map((p, i) => `
+          <article class="player-card glass-card reveal" data-player="${p.name}" style="transition-delay: ${i * 0.05}s;">
+            <div class="player-avatar">${p.initials}</div>
+            <div class="player-info">
+              <div class="player-name">${p.name}</div>
+              <div class="player-meta">${p.club}</div>
+            </div>
+            <span class="player-position">${p.position}</span>
+          </article>
+        `).join('');
+
+        // Re-trigger reveal for newly rendered cards
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        grid.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+        // Attach click handlers to player cards
+        grid.querySelectorAll('.player-card').forEach((card) => {
+          card.addEventListener('click', () => {
+            const player = players.find((p) => p.name === card.dataset.player);
+            if (player) openModal(player);
+          });
+        });
+      };
+
+      /* --- Modal Logic --- */
+      const modal = document.getElementById('player-modal');
+      const modalClose = document.getElementById('modal-close');
+
+      const openModal = (player) => {
+        document.getElementById('modal-avatar').textContent = player.initials;
+        document.getElementById('modal-player-name').textContent = player.name;
+        document.getElementById('modal-player-meta').textContent = `${player.club} · ${player.position}`;
+        document.getElementById('modal-bio').textContent = player.bio;
+        document.getElementById('modal-goals').textContent = player.goals;
+        document.getElementById('modal-assists').textContent = player.assists;
+        document.getElementById('modal-apps').textContent = player.apps;
+
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeModal = () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      };
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+
+      /* --- Search & Filter Events --- */
+      searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value.trim();
+        renderPlayers();
+      });
+
+      positionBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          positionBtns.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentPosition = btn.dataset.position;
+          renderPlayers();
+        });
+      });
+
+      /* --- Initial Render --- */
+      renderPlayers();
+    });
+  </script>
+</body>
+</html>

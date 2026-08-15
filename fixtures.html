@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ideal Sports — Live scores, upcoming fixtures, and finished match results with head-to-head stats." />
+  <title>Fixtures & Scores — Ideal Sports</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Ideal Sports Home">
+        <span class="logo-icon">⚽</span>
+        Ideal<span>Sports</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="fixtures.html" class="nav-link">Fixtures</a>
+        <a href="teams.html" class="nav-link">Teams</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <nav class="mobile-drawer" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="fixtures.html" class="nav-link">📅 Fixtures</a>
+    <a href="teams.html" class="nav-link">👥 Teams</a>
+    <a href="about.html" class="nav-link">ℹ️ About</a>
+    <a href="contact.html" class="nav-link">✉️ Contact</a>
+  </nav>
+
+  <!-- ======================= PAGE HERO ======================= -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h1 class="section-title">Fixtures & <span class="accent">Scores</span></h1>
+          <p class="section-subtitle">Filter live matches, upcoming kick-offs, and final results. Expand any match for head-to-head history.</p>
+        </div>
+        <span class="live-badge"><span class="dot"></span> 3 LIVE NOW</span>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal reveal-delay-1" role="tablist" aria-label="Match filters">
+        <button class="filter-btn active" data-filter="all" role="tab">All Matches</button>
+        <button class="filter-btn" data-filter="live" role="tab">🔴 Live</button>
+        <button class="filter-btn" data-filter="upcoming" role="tab">Upcoming</button>
+        <button class="filter-btn" data-filter="finished" role="tab">Finished</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= MATCH LIST ======================= -->
+  <section class="section">
+    <div class="container">
+      <div class="match-list" id="match-list">
+
+        <!-- LIVE MATCH 1 -->
+        <article class="match-card glass-card reveal" data-status="live">
+          <div class="match-team home">
+            <span>Manchester City</span>
+            <span class="team-crest">MC</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score">2 - 1</div>
+            <div class="match-time"><span class="live-badge"><span class="dot"></span> 67'</span></div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">LIV</span>
+            <span>Liverpool</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">38</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">16</div><div class="h2h-label">City Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">12</div><div class="h2h-label">Liverpool Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">10</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">54</div><div class="h2h-label">City Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">47</div><div class="h2h-label">Liverpool Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- LIVE MATCH 2 -->
+        <article class="match-card glass-card reveal reveal-delay-1" data-status="live">
+          <div class="match-team home">
+            <span>Real Madrid</span>
+            <span class="team-crest">RM</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score">3 - 2</div>
+            <div class="match-time"><span class="live-badge"><span class="dot"></span> 81'</span></div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">BAR</span>
+            <span>Barcelona</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">52</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">22</div><div class="h2h-label">Madrid Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">18</div><div class="h2h-label">Barcelona Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">12</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">78</div><div class="h2h-label">Madrid Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">71</div><div class="h2h-label">Barcelona Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- LIVE MATCH 3 -->
+        <article class="match-card glass-card reveal reveal-delay-2" data-status="live">
+          <div class="match-team home">
+            <span>AC Milan</span>
+            <span class="team-crest">ACM</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score">0 - 0</div>
+            <div class="match-time"><span class="live-badge"><span class="dot"></span> 54'</span></div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">NAP</span>
+            <span>Napoli</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">44</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">19</div><div class="h2h-label">Milan Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">14</div><div class="h2h-label">Napoli Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">11</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">61</div><div class="h2h-label">Milan Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">52</div><div class="h2h-label">Napoli Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- UPCOMING MATCH 1 -->
+        <article class="match-card glass-card reveal" data-status="upcoming">
+          <div class="match-team home">
+            <span>PSG</span>
+            <span class="team-crest">PSG</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score upcoming">vs</div>
+            <div class="match-time">Today · 19:45</div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">MAR</span>
+            <span>Marseille</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">48</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">25</div><div class="h2h-label">PSG Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">13</div><div class="h2h-label">Marseille Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">10</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">72</div><div class="h2h-label">PSG Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">49</div><div class="h2h-label">Marseille Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- UPCOMING MATCH 2 -->
+        <article class="match-card glass-card reveal reveal-delay-1" data-status="upcoming">
+          <div class="match-team home">
+            <span>Juventus</span>
+            <span class="team-crest">JUV</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score upcoming">vs</div>
+            <div class="match-time">Today · 20:00</div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">INT</span>
+            <span>Inter Milan</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">56</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">24</div><div class="h2h-label">Juventus Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">17</div><div class="h2h-label">Inter Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">15</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">69</div><div class="h2h-label">Juventus Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">58</div><div class="h2h-label">Inter Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- UPCOMING MATCH 3 -->
+        <article class="match-card glass-card reveal reveal-delay-2" data-status="upcoming">
+          <div class="match-team home">
+            <span>Arsenal</span>
+            <span class="team-crest">ARS</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score upcoming">vs</div>
+            <div class="match-time">Tomorrow · 17:30</div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">CHE</span>
+            <span>Chelsea</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">50</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">20</div><div class="h2h-label">Arsenal Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">18</div><div class="h2h-label">Chelsea Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">12</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">63</div><div class="h2h-label">Arsenal Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">59</div><div class="h2h-label">Chelsea Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FINISHED MATCH 1 -->
+        <article class="match-card glass-card reveal" data-status="finished">
+          <div class="match-team home">
+            <span>Bayern Munich</span>
+            <span class="team-crest">BAY</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score">4 - 0</div>
+            <div class="match-time">FT · Yesterday</div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">BVB</span>
+            <span>Dortmund</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">60</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">32</div><div class="h2h-label">Bayern Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">12</div><div class="h2h-label">Dortmund Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">16</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">98</div><div class="h2h-label">Bayern Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">61</div><div class="h2h-label">Dortmund Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FINISHED MATCH 2 -->
+        <article class="match-card glass-card reveal reveal-delay-1" data-status="finished">
+          <div class="match-team home">
+            <span>Ajax</span>
+            <span class="team-crest">AJA</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score">2 - 2</div>
+            <div class="match-time">FT · Yesterday</div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">FEY</span>
+            <span>Feyenoord</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">42</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">18</div><div class="h2h-label">Ajax Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">14</div><div class="h2h-label">Feyenoord Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">10</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">58</div><div class="h2h-label">Ajax Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">51</div><div class="h2h-label">Feyenoord Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FINISHED MATCH 3 -->
+        <article class="match-card glass-card reveal reveal-delay-2" data-status="finished">
+          <div class="match-team home">
+            <span>Atletico Madrid</span>
+            <span class="team-crest">ATM</span>
+          </div>
+          <div class="match-center">
+            <div class="match-score">1 - 3</div>
+            <div class="match-time">FT · Yesterday</div>
+          </div>
+          <div class="match-team">
+            <span class="team-crest">SEV</span>
+            <span>Sevilla</span>
+          </div>
+          <button class="h2h-toggle" aria-expanded="false">
+            Head-to-Head <span class="chevron">▼</span>
+          </button>
+          <div class="h2h-panel">
+            <div class="h2h-content">
+              <div class="h2h-stats">
+                <div class="h2h-stat"><div class="h2h-value">46</div><div class="h2h-label">Meetings</div></div>
+                <div class="h2h-stat"><div class="h2h-value">21</div><div class="h2h-label">Atletico Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">15</div><div class="h2h-label">Sevilla Wins</div></div>
+                <div class="h2h-stat"><div class="h2h-value">10</div><div class="h2h-label">Draws</div></div>
+                <div class="h2h-stat"><div class="h2h-value">64</div><div class="h2h-label">Atletico Goals</div></div>
+                <div class="h2h-stat"><div class="h2h-value">55</div><div class="h2h-label">Sevilla Goals</div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty state (shown when filter has no results) -->
+      <div class="empty-state" id="empty-state" style="display: none; text-align: center; padding: var(--space-xl) 0;">
+        <p style="font-size: 3rem; margin-bottom: var(--space-sm);">📭</p>
+        <h3 style="margin-bottom: var(--space-xs);">No matches found</h3>
+        <p style="color: var(--text-muted);">Try a different filter to see more fixtures.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">⚽</span>
+            Ideal<span>Sports</span>
+          </a>
+          <p>Your ultimate destination for live football scores, fixtures, and player insights across the globe.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+            <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="fixtures.html">Fixtures & Scores</a>
+            <a href="teams.html">Teams & Players</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Leagues</h4>
+          <div class="footer-links">
+            <a href="#">Premier League</a>
+            <a href="#">La Liga</a>
+            <a href="#">Serie A</a>
+            <a href="#">Bundesliga</a>
+            <a href="#">Champions League</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div class="footer-links">
+            <a href="mailto:info@idealsports.com">✉️ info@idealsports.com</a>
+            <a href="tel:+15551234567">📞 +1 (555) 123-4567</a>
+            <a href="#">📍 88 Stadium Avenue, London</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Ideal Sports. All rights reserved.</span>
+        <span>Made with ⚽ for the love of the game.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ==========================================================================
+       FIXTURES PAGE — Filtering & Head-to-Head Drawers
+       ========================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const matchCards = document.querySelectorAll('.match-card');
+      const emptyState = document.getElementById('empty-state');
+
+      // --- Filter Logic ---
+      const applyFilter = (filter) => {
+        let visibleCount = 0;
+
+        matchCards.forEach((card) => {
+          const status = card.dataset.status;
+          const show = filter === 'all' || status === filter;
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
+        });
+
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      };
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyFilter(btn.dataset.filter);
+        });
+      });
+
+      // --- Head-to-Head Drawer Toggle ---
+      const h2hToggles = document.querySelectorAll('.h2h-toggle');
+
+      h2hToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const card = toggle.closest('.match-card');
+          const panel = card.querySelector('.h2h-panel');
+          const isOpen = panel.classList.contains('open');
+
+          // Close all other open panels
+          h2hToggles.forEach((t) => {
+            const c = t.closest('.match-card');
+            const p = c.querySelector('.h2h-panel');
+            p.classList.remove('open');
+            t.classList.remove('open');
+            t.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle the clicked one
+          if (!isOpen) {
+            panel.classList.add('open');
+            toggle.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

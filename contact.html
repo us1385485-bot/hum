@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ideal Sports — Contact us, read FAQs, find our location, and subscribe to our newsletter." />
+  <title>Contact Us — Ideal Sports</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Ideal Sports Home">
+        <span class="logo-icon">⚽</span>
+        Ideal<span>Sports</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="fixtures.html" class="nav-link">Fixtures</a>
+        <a href="teams.html" class="nav-link">Teams</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <nav class="mobile-drawer" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="fixtures.html" class="nav-link">📅 Fixtures</a>
+    <a href="teams.html" class="nav-link">👥 Teams</a>
+    <a href="about.html" class="nav-link">ℹ️ About</a>
+    <a href="contact.html" class="nav-link">✉️ Contact</a>
+  </nav>
+
+  <!-- ======================= PAGE HERO ======================= -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h1 class="section-title">Contact <span class="accent">Us</span></h1>
+          <p class="section-subtitle">Questions, partnerships, or feedback — we'd love to hear from you. Fill out the form and our team will respond within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACT GRID ======================= -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Form -->
+        <div class="glass-card reveal" style="padding: var(--space-lg);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 800; margin-bottom: var(--space-md);">Send a <span class="accent">Message</span></h2>
+
+          <div class="form-success" id="form-success">
+            ✓ Your message has been sent! We'll get back to you within 24 hours.
+          </div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input type="text" id="name" class="form-input" placeholder="John Smith" required />
+              <div class="form-error" id="name-error">Please enter your full name (min 2 characters).</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="john@example.com" required />
+              <div class="form-error" id="email-error">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <select id="subject" class="form-select" required>
+                <option value="">Select a topic...</option>
+                <option value="general">General Inquiry</option>
+                <option value="partnership">Partnership</option>
+                <option value="support">Technical Support</option>
+                <option value="feedback">Feedback</option>
+                <option value="press">Press & Media</option>
+              </select>
+              <div class="form-error" id="subject-error">Please select a subject.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea id="message" class="form-textarea" placeholder="Tell us how we can help..." required></textarea>
+              <div class="form-error" id="message-error">Please enter a message (min 10 characters).</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message →</button>
+          </form>
+        </div>
+
+        <!-- FAQ + Map -->
+        <div>
+          <!-- FAQ Accordion -->
+          <div class="glass-card reveal reveal-delay-1" style="padding: var(--space-lg); margin-bottom: var(--space-md);">
+            <h2 style="font-size: var(--fs-h3); font-weight: 800; margin-bottom: var(--space-md);">Frequently Asked <span class="accent">Questions</span></h2>
+
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  How often are live scores updated?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Our live scores update in real time, typically within 1–2 seconds of an event occurring on the pitch. We use a dedicated data feed from official league sources.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Is Ideal Sports free to use?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes! All core features — live scores, fixtures, team pages, and player stats — are completely free. We may introduce premium features in the future, but the essentials will always remain free.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  How can my club become a partner?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <p>We're always excited to welcome new clubs. Reach out via the contact form and select "Partnership" as your subject. Our partnerships team will get back to you within 48 hours.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Which leagues do you cover?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <p>We currently cover 12 leagues including the Premier League, La Liga, Serie A, Bundesliga, Ligue 1, and the Champions League, with more being added regularly.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Can I report a bug or issue?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Absolutely. Select "Technical Support" in the contact form and include as much detail as possible — the page, device, and browser you're using. We'll investigate promptly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="map-placeholder reveal reveal-delay-2" aria-label="Map showing our location">
+            <div class="map-pin"><span>📍</span></div>
+            <div class="map-label">88 Stadium Avenue, London</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= NEWSLETTER ======================= -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter-box reveal">
+        <h3>Join the Ideal Sports Newsletter</h3>
+        <p>Weekly matchday previews, transfer roundups, and exclusive insights — straight to your inbox.</p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <input type="email" class="form-input" placeholder="Enter your email" aria-label="Email address" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">⚽</span>
+            Ideal<span>Sports</span>
+          </a>
+          <p>Your ultimate destination for live football scores, fixtures, and player insights across the globe.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+            <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="fixtures.html">Fixtures & Scores</a>
+            <a href="teams.html">Teams & Players</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Leagues</h4>
+          <div class="footer-links">
+            <a href="#">Premier League</a>
+            <a href="#">La Liga</a>
+            <a href="#">Serie A</a>
+            <a href="#">Bundesliga</a>
+            <a href="#">Champions League</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div class="footer-links">
+            <a href="mailto:info@idealsports.com">✉️ info@idealsports.com</a>
+            <a href="tel:+15551234567">📞 +1 (555) 123-4567</a>
+            <a href="#">📍 88 Stadium Avenue, London</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Ideal Sports. All rights reserved.</span>
+        <span>Made with ⚽ for the love of the game.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ==========================================================================
+       CONTACT PAGE — Form Validation, FAQ Accordion & Newsletter
+       ========================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      /* --- FAQ Accordion --- */
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach((item) => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          // Close all other items
+          faqItems.forEach((i) => {
+            i.classList.remove('open');
+            i.querySelector('.faq-answer').style.maxHeight = null;
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle clicked item
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            question.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* --- Contact Form Validation --- */
+      const form = document.getElementById('contact-form');
+      const successBox = document.getElementById('form-success');
+
+      const fields = {
+        name: { el: document.getElementById('name'), error: document.getElementById('name-error'), validate: (v) => v.trim().length >= 2 },
+        email: { el: document.getElementById('email'), error: document.getElementById('email-error'), validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+        subject: { el: document.getElementById('subject'), error: document.getElementById('subject-error'), validate: (v) => v !== '' },
+        message: { el: document.getElementById('message'), error: document.getElementById('message-error'), validate: (v) => v.trim().length >= 10 }
+      };
+
+      const validateField = (key) => {
+        const field = fields[key];
+        const isValid = field.validate(field.el.value);
+        field.el.classList.toggle('error', !isValid);
+        field.error.classList.toggle('show', !isValid);
+        return isValid;
+      };
+
+      // Live validation on input/blur
+      Object.keys(fields).forEach((key) => {
+        const field = fields[key];
+        field.el.addEventListener('blur', () => validateField(key));
+        field.el.addEventListener('input', () => {
+          if (field.el.classList.contains('error')) validateField(key);
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Validate all fields
+        const results = Object.keys(fields).map(validateField);
+        const allValid = results.every(Boolean);
+
+        if (!allValid) {
+          // Focus first invalid field
+          const firstInvalid = Object.keys(fields).find((key) => fields[key].el.classList.contains('error'));
+          if (firstInvalid) fields[firstInvalid].el.focus();
+          return;
+        }
+
+        // Show success message
+        successBox.classList.add('show');
+        form.reset();
+
+        // Hide success after 5 seconds
+        setTimeout(() => successBox.classList.remove('show'), 5000);
+      });
+
+      /* --- Newsletter Form --- */
+      const newsletterForm = document.getElementById('newsletter-form');
+
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailInput.value.trim())) {
+          emailInput.classList.add('error');
+          emailInput.focus();
+          return;
+        }
+
+        emailInput.classList.remove('error');
+        const btn = newsletterForm.querySelector('button');
+        btn.textContent = '✓ Subscribed!';
+        btn.classList.add('btn-gold');
+        btn.classList.remove('btn-primary');
+        emailInput.value = '';
+        setTimeout(() => {
+          btn.textContent = 'Subscribe';
+          btn.classList.remove('btn-gold');
+          btn.classList.add('btn-primary');
+        }, 2500);
+      });
+    });
+  </script>
+</body>
+</html>
